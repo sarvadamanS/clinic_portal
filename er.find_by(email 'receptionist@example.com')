@@ -1,0 +1,11 @@
+=> 
+[32m#<User:0x000001742daa8460[0m
+ id: [34m[1m1[0m,
+ email: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+ password_digest: [31m[1m"[0m[31m[FILTERED][0m[31m[1m"[0m,
+ role: [31m[1m"[0m[31mreceptionist[0m[31m[1m"[0m,
+ created_at: [31m[1m"[0m[31m2024-09-22 15:11:19.178800000 +0000[0m[31m[1m"[0m,
+ updated_at: [31m[1m"[0m[31m2024-09-24 14:54:41.970140000 +0000[0m[31m[1m"[0m,
+ reset_password_token: [36m[1mnil[0m,
+ reset_password_sent_at: [36m[1mnil[0m,
+ remember_created_at: [36m[1mnil[0m[32m>[0m

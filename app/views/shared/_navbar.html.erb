@@ -1,0 +1,15 @@
+<nav>
+  <% if logged_in? %>
+    <%= link_to 'Home', root_path %> |
+    <%= link_to 'Logout', logout_path, method: :delete %> |
+
+    <% if current_user.role == 'receptionist' %>
+      <%= link_to 'Receptionist Dashboard', receptionist_dashboard_path %>
+    <% elsif current_user.role == 'doctor' %>
+      <%= link_to 'Doctor Dashboard', doctor_dashboard_path %>
+    <% end %>
+
+  <% else %>
+    <%= link_to 'Login', login_path %>
+  <% end %>
+</nav>

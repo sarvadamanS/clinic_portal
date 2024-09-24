@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ClinicPortal</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+
+  <!-- Add Chartkick and Chart.js CDN here -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script> <!-- For Google Charts (optional if using) -->
+  <script src="https://cdn.jsdelivr.net/npm/chartkick@5.0.1/dist/chartkick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Render the navbar partial here -->
+    <nav>
+      <% if logged_in? %>
+        <%= link_to 'Home', root_path %> |
+        <%= link_to 'Logout', logout_path, method: :delete %>
+
+        <% if current_user.role == 'receptionist' %>
+          <%= link_to 'Receptionist Dashboard', receptionist_dashboard_path %>
+        <% elsif current_user.role == 'doctor' %>
+          <%= link_to 'Doctor Dashboard', doctor_dashboard_path %>
+        <% end %>
+
+      <% else %>
+        <%= link_to 'Login', login_path %>
+      <% end %>
+    </nav>
+  </header>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

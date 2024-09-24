@@ -1,0 +1,8 @@
+<h1>Receptionist Dashboard</h1>
+<p>Welcome, <%= current_user.email %>!</p>
+
+<h2>Patient Management</h2>
+<ul>
+  <li><%= link_to 'Register a New Patient', new_patient_path %></li>
+  <li><%= link_to 'View All Patients', patients_path %></li>
+</ul>

@@ -1,0 +1,16 @@
+<!-- app/views/doctors/index.html.erb -->
+<h1>Doctor's Dashboard</h1>
+
+<h2>Patient List</h2>
+<% if @patients.any? %>
+  <ul>
+    <% @patients.each do |patient| %>
+      <li><%= patient.first_name %> <%= patient.last_name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No patients found</p>
+<% end %>
+
+<h2>Patient Registration Chart</h2>
+<%= line_chart @chart_data %> <!-- Assuming you're using chartkick gem for charts -->
